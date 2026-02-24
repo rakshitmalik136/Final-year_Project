@@ -1,8 +1,7 @@
 const crypto = require("crypto");
 
-const DEFAULT_ADMIN_USERNAME = "admin";
-const DEFAULT_ADMIN_PASSWORD = "admin123";
 const DEFAULT_TOKEN_TTL_SECONDS = 12 * 60 * 60;
+const readAdminEnv = (name) => String(process.env[name] || "").trim();
 
 const safeCompare = (left, right) => {
   const leftBuffer = Buffer.from(String(left));
@@ -16,13 +15,14 @@ const safeCompare = (left, right) => {
 };
 
 const getAdminConfig = () => {
+  const username = readAdminEnv("ADMIN_USERNAME");
+  const password = readAdminEnv("ADMIN_PASSWORD");
+  const tokenSecret = readAdminEnv("ADMIN_AUTH_SECRET") || password;
+
   return {
-    username: process.env.ADMIN_USERNAME || DEFAULT_ADMIN_USERNAME,
-    password: process.env.ADMIN_PASSWORD || DEFAULT_ADMIN_PASSWORD,
-    tokenSecret:
-      process.env.ADMIN_AUTH_SECRET ||
-      process.env.ADMIN_PASSWORD ||
-      "cb365-admin-auth-secret",
+    username,
+    password,
+    tokenSecret,
     tokenTtlSeconds:
       Number(process.env.ADMIN_TOKEN_TTL_SECONDS) || DEFAULT_TOKEN_TTL_SECONDS
   };
@@ -30,6 +30,7 @@ const getAdminConfig = () => {
 
 const isValidCredential = ({ username, password }) => {
   const config = getAdminConfig();
+  if (!config.username || !config.password) return false;
   return (
     safeCompare(username, config.username) &&
     safeCompare(password, config.password)

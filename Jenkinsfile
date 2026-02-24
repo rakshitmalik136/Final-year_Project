@@ -20,7 +20,12 @@ pipeline {
     )
     string(
       name: "ENV_FILE_CREDENTIALS_ID",
-      defaultValue: "",
+      defaultValue: "ADMIN_USERNAME=CakesnBakes365Admin
+                     ADMIN_PASSWORD=Lucky0293
+                     ADMIN_AUTH_SECRET=Opened4yearsago
+                     ADMIN_TOKEN_TTL_SECONDS=43200
+                     ADMIN_VIEW_USER=CakesnBakesAdmin
+                     ADMIN_VIEW_PASSWORD=Lucky0293",
       description: "Optional Jenkins Secret file credential ID for project .env."
     )
     string(
@@ -73,11 +78,22 @@ pipeline {
           } else {
             sh """
               set -euo pipefail
-              if [ ! -f .env ]; then
-                cp .env.ci.example .env
-              fi
+              cp .env.ci.example .env
+              chmod 600 .env
             """
           }
+
+          sh '''
+            set -euo pipefail
+            required_vars="ADMIN_USERNAME ADMIN_PASSWORD ADMIN_AUTH_SECRET ADMIN_VIEW_USER ADMIN_VIEW_PASSWORD"
+            for var in $required_vars; do
+              value="$(grep -E "^${var}=" .env | tail -n1 | cut -d= -f2- || true)"
+              if [ -z "$value" ]; then
+                echo "Missing required $var in .env"
+                exit 1
+              fi
+            done
+          '''
         }
       }
     }

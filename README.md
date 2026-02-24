@@ -235,7 +235,7 @@ Note: This endpoint now requires admin bearer token.
 ### Admin
 `POST /admin/login`
 ```json
-{ "username": "admin", "password": "admin123" }
+{ "username": "your-admin-username", "password": "your-admin-password" }
 ```
 `GET /admin/dashboard` (Bearer token required)
 Response includes:
