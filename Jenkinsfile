@@ -50,6 +50,11 @@ pipeline {
           docker compose version
           node --version
           npm --version
+          if ! docker info >/dev/null 2>&1; then
+            echo "Docker daemon is not reachable from this Jenkins agent."
+            echo "Ensure Jenkins can access /var/run/docker.sock (or a remote Docker daemon)."
+            docker info
+          fi
         """
       }
     }
