@@ -42,7 +42,7 @@ Open `http://localhost:8081`.
 If your API is not at `http://localhost:4000/api`, update `frontend/config.js`.
 To enable the WhatsApp button, set `WHATSAPP_NUMBER` in `frontend/config.js` (digits only).
 
-## Docker (Optional)
+## Docker
 ```bash
 docker compose up --build
 ```
@@ -53,10 +53,7 @@ Backend direct container: `http://localhost:4000/api/health`
 Admin page: `https://localhost/#admin`
 Note: In Docker, the frontend proxies `/api` to the backend automatically.
 Note: The proxy creates a self-signed certificate on first boot, so your browser will show a warning unless you trust that cert locally.
-Default admin login:
-- username: `admin`
-- password: `admin123`
-Change these in root `.env` for security:
+
 ```env
 ADMIN_USERNAME=your-admin-username
 ADMIN_PASSWORD=your-strong-password
