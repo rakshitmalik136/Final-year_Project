@@ -20,12 +20,7 @@ pipeline {
     )
     string(
       name: "ENV_FILE_CREDENTIALS_ID",
-      defaultValue: "ADMIN_USERNAME=CakesnBakes365Admin
-                     ADMIN_PASSWORD=Lucky0293
-                     ADMIN_AUTH_SECRET=Opened4yearsago
-                     ADMIN_TOKEN_TTL_SECONDS=43200
-                     ADMIN_VIEW_USER=CakesnBakesAdmin
-                     ADMIN_VIEW_PASSWORD=Lucky0293",
+      defaultValue: "cb365-env-prod",
       description: "Optional Jenkins Secret file credential ID for project .env."
     )
     string(
