@@ -54,6 +54,8 @@ Admin page: `https://localhost/#admin`
 Note: In Docker, the frontend proxies `/api` to the backend automatically.
 Note: The proxy creates a self-signed certificate on first boot, so your browser will show a warning unless you trust that cert locally.
 
+## For Admin Access
+
 ```env
 ADMIN_USERNAME=your-admin-username
 ADMIN_PASSWORD=your-strong-password
