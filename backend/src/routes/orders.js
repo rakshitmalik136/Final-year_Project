@@ -20,6 +20,7 @@ const ORDER_STATUSES = [
   "delivered",
   "cancelled"
 ];
+const PICKUP_ADDRESS_LABEL = "Self pickup at Cakes n Bakes 365";
 
 const orderIdSchema = z.object({
   orderId: z.coerce.number().int().positive()
@@ -29,7 +30,7 @@ const orderSchema = z.object({
   sessionId: z.string().trim().min(6).max(64),
   customerName: z.string().trim().min(2).max(80),
   phone: z.string().trim().min(8).max(20),
-  address: z.string().trim().min(5).max(200),
+  address: z.string().trim().max(200).optional().or(z.literal("")),
   notes: z.string().trim().max(300).optional().or(z.literal("")),
   whatsappOptIn: z.boolean().optional()
 });
@@ -42,7 +43,8 @@ router.post(
   "/",
   validate({ body: orderSchema }),
   asyncHandler(async (req, res) => {
-    const { sessionId, customerName, phone, address, notes } = req.body;
+    const { sessionId, customerName, phone, notes } = req.body;
+    const address = String(req.body.address || "").trim() || PICKUP_ADDRESS_LABEL;
     const whatsappOptIn = Boolean(req.body.whatsappOptIn);
 
     const cartResult = await db.query(

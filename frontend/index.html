@@ -29,17 +29,16 @@
             <span></span>
             <span></span>
           </button>
-          <nav class="nav-links">
-            <a href="#home" data-link>Home</a>
-            <a href="#menu" data-link>Menu</a>
-            <a href="#about" data-link>About</a>
-            <a href="#contact" data-link>Contact</a>
-            <a href="#admin" data-link>Admin</a>
-            <a href="#cart" data-link class="cart-link">
-              Cart
-              <span class="cart-count" id="cart-count">0</span>
-            </a>
-          </nav>
+	          <nav class="nav-links">
+	            <a href="#home" data-link>Home</a>
+	            <a href="#menu" data-link>Menu</a>
+	            <a href="#about" data-link>About</a>
+	            <a href="#contact" data-link>Contact</a>
+	            <a href="#cart" data-link class="cart-link">
+	              Cart
+	              <span class="cart-count" id="cart-count">0</span>
+	            </a>
+	          </nav>
           <a href="#menu" class="btn primary" data-link>Order Now</a>
         </div>
       </header>
@@ -222,76 +221,6 @@
           </div>
         </section>
 
-        <section class="page" id="admin" data-page="admin">
-          <div class="container section">
-            <div class="section-header">
-              <div>
-                <h2>Admin Dashboard</h2>
-                <p class="section-subtitle">
-                  Track current orders, transit orders, and earnings.
-                </p>
-              </div>
-              <div class="admin-actions" id="admin-actions" hidden>
-                <button class="btn ghost" id="admin-refresh" type="button">
-                  Refresh
-                </button>
-                <button class="btn ghost" id="admin-logout" type="button">
-                  Logout
-                </button>
-              </div>
-            </div>
-
-            <div class="admin-layout">
-              <div class="admin-login-card" id="admin-login-card">
-                <h3>Admin Login</h3>
-                <p class="section-subtitle">
-                  Enter your admin username and password.
-                </p>
-                <form class="admin-login-form" id="admin-login-form">
-                  <label>
-                    Username
-                    <input
-                      type="text"
-                      name="username"
-                      autocomplete="username"
-                      required
-                    />
-                  </label>
-                  <label>
-                    Password
-                    <input
-                      type="password"
-                      name="password"
-                      autocomplete="current-password"
-                      required
-                    />
-                  </label>
-                  <button class="btn primary" type="submit">Login</button>
-                </form>
-                <p class="form-note" id="admin-login-message"></p>
-              </div>
-
-              <div class="admin-dashboard" id="admin-dashboard" hidden>
-                <div class="admin-metrics" id="admin-metrics"></div>
-                <div class="admin-columns">
-                  <div class="summary-card">
-                    <h3>Current Orders</h3>
-                    <div class="admin-orders" id="admin-current-orders"></div>
-                  </div>
-                  <div class="summary-card">
-                    <h3>Orders In Transit</h3>
-                    <div
-                      class="admin-orders"
-                      id="admin-in-transit-orders"
-                    ></div>
-                  </div>
-                </div>
-                <p class="form-note" id="admin-dashboard-message"></p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section class="page" id="cart" data-page="cart">
           <div class="container section">
             <div class="section-header">
@@ -316,7 +245,7 @@
               <div>
                 <h2>Checkout</h2>
                 <p class="section-subtitle">
-                  Enter your details and place the order.
+                  Enter your details and place your pickup order.
                 </p>
               </div>
               <a href="#cart" class="btn ghost" data-link>Back to cart</a>
@@ -330,10 +259,6 @@
                 <label>
                   Phone number
                   <input type="tel" name="phone" required />
-                </label>
-                <label>
-                  Delivery address
-                  <textarea name="address" rows="3" required></textarea>
                 </label>
                 <label>
                   Notes (optional)

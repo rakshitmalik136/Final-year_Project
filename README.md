@@ -47,11 +47,13 @@ To enable the WhatsApp button, set `WHATSAPP_NUMBER` in `frontend/config.js` (di
 docker compose up --build
 ```
 Frontend (HTTPS): `https://localhost`
-Frontend (direct container HTTP): `http://localhost:8081`
+Frontend (direct container HTTP, localhost only): `http://localhost:8081`
 Backend via HTTPS proxy: `https://localhost/api/health`
 Backend direct container: `http://localhost:4000/api/health`
-Admin page: `https://localhost/#admin`
+Admin page: `https://localhost/admin`
 Note: In Docker, the frontend proxies `/api` to the backend automatically.
+Note: The admin dashboard is removed from public navigation and is only served through `/admin`.
+Note: `/admin` is protected by HTTP Basic Auth first, then in-app admin login.
 Note: The proxy creates a self-signed certificate on first boot, so your browser will show a warning unless you trust that cert locally.
 
 ## For Admin Access
@@ -61,6 +63,8 @@ ADMIN_USERNAME=your-admin-username
 ADMIN_PASSWORD=your-strong-password
 ADMIN_AUTH_SECRET=your-random-long-secret
 ADMIN_TOKEN_TTL_SECONDS=43200
+ADMIN_VIEW_USER=your-admin-basic-user
+ADMIN_VIEW_PASSWORD=your-admin-basic-password
 ```
 
 ### Access From Other Devices (LAN)
@@ -121,7 +125,7 @@ This repository includes a root `Jenkinsfile` for CI/CD with Docker Compose.
 2. Add the repository webhook to your Jenkins webhook endpoint.
 3. Push to the tracked branch; Jenkins will run the pipeline automatically.
 
-Note: Jenkins commonly runs on `http://<host>:8080`; this app's direct frontend port is `8081`, so they do not conflict.
+Note: Jenkins commonly runs on `http://<host>:8080`; this app's direct frontend port is `8081` (localhost bind), so they do not conflict.
 
 ## API Endpoints
 Base URL: `/api`
@@ -191,11 +195,11 @@ Base URL: `/api`
   "sessionId": "cb365-abc123",
   "customerName": "Riya Sharma",
   "phone": "9319426397",
-  "address": "Cakes n Bakes 365, Mehrauli ND-30",
   "notes": "Less spicy please",
   "whatsappOptIn": true
 }
 ```
+Note: Orders are pickup-only. Delivery address is not required.
 Response:
 ```json
 {
@@ -204,7 +208,7 @@ Response:
     "createdAt": "2026-02-10T12:00:00.000Z",
     "customerName": "Riya Sharma",
     "phone": "9319426397",
-    "address": "Cakes n Bakes 365, Mehrauli ND-30",
+    "address": "Self pickup at Cakes n Bakes 365",
     "notes": "Less spicy please",
     "whatsappOptIn": true,
     "items": [

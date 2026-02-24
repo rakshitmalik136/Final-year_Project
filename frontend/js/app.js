@@ -92,8 +92,25 @@ const setActivePage = (page) => {
   }
 };
 
+const resolveRoutablePage = (requestedPage) => {
+  const normalized = String(requestedPage || "").trim() || "home";
+  const availablePages = qsa(".page")
+    .map((section) => section.dataset.page)
+    .filter(Boolean);
+
+  if (!availablePages.length) return "home";
+  return availablePages.includes(normalized) ? normalized : "home";
+};
+
 const handleRouting = () => {
-  const page = window.location.hash.replace("#", "") || "home";
+  const requestedPage = window.location.hash.replace("#", "");
+  const page = resolveRoutablePage(requestedPage);
+
+  if (requestedPage && requestedPage !== page) {
+    window.location.hash = `#${page}`;
+    return;
+  }
+
   setActivePage(page);
 };
 
@@ -403,7 +420,6 @@ const handleCheckout = () => {
           sessionId,
           customerName: data.customerName,
           phone: data.phone,
-          address: data.address,
           notes: data.notes || "",
           whatsappOptIn
         })
@@ -571,7 +587,7 @@ const renderAdminOrders = (orders, selector, enableActions = false) => {
             ${escapeHtml(order.customerName)} • ${escapeHtml(order.phone)}
           </p>
           <p class="admin-order-meta">
-            ${escapeHtml(order.address)}
+            Pickup order
           </p>
           <p class="admin-order-meta">
             Placed: ${new Date(order.createdAt).toLocaleString()}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cakes n Bakes 365 | Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <script src="config.js"></script>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="container nav">
+          <a href="/" class="logo">
+            <span class="logo-mark">CB</span>
+            <span>
+              <strong>Cakes n Bakes 365</strong>
+              <small>admin portal</small>
+            </span>
+          </a>
+          <a href="/" class="btn ghost">Back to Store</a>
+        </div>
+      </header>
+
+      <main class="site-main">
+        <section class="page active" id="admin" data-page="admin">
+          <div class="container section">
+            <div class="section-header">
+              <div>
+                <h2>Admin Dashboard</h2>
+                <p class="section-subtitle">
+                  Track current orders, transit orders, and earnings.
+                </p>
+              </div>
+              <div class="admin-actions" id="admin-actions" hidden>
+                <button class="btn ghost" id="admin-refresh" type="button">
+                  Refresh
+                </button>
+                <button class="btn ghost" id="admin-logout" type="button">
+                  Logout
+                </button>
+              </div>
+            </div>
+
+            <div class="admin-layout">
+              <div class="admin-login-card" id="admin-login-card">
+                <h3>Admin Login</h3>
+                <p class="section-subtitle">
+                  Enter your admin username and password.
+                </p>
+                <form class="admin-login-form" id="admin-login-form">
+                  <label>
+                    Username
+                    <input
+                      type="text"
+                      name="username"
+                      autocomplete="username"
+                      required
+                    />
+                  </label>
+                  <label>
+                    Password
+                    <input
+                      type="password"
+                      name="password"
+                      autocomplete="current-password"
+                      required
+                    />
+                  </label>
+                  <button class="btn primary" type="submit">Login</button>
+                </form>
+                <p class="form-note" id="admin-login-message"></p>
+              </div>
+
+              <div class="admin-dashboard" id="admin-dashboard" hidden>
+                <div class="admin-metrics" id="admin-metrics"></div>
+                <div class="admin-columns">
+                  <div class="summary-card">
+                    <h3>Current Orders</h3>
+                    <div class="admin-orders" id="admin-current-orders"></div>
+                  </div>
+                  <div class="summary-card">
+                    <h3>Orders In Transit</h3>
+                    <div
+                      class="admin-orders"
+                      id="admin-in-transit-orders"
+                    ></div>
+                  </div>
+                </div>
+                <p class="form-note" id="admin-dashboard-message"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

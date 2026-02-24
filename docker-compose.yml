@@ -39,7 +39,7 @@ services:
       API_BASE: /api
       WHATSAPP_NUMBER: ${WHATSAPP_NUMBER}
     ports:
-      - "8081:80"
+      - "127.0.0.1:8081:80"
     depends_on:
       - backend
 
@@ -49,6 +49,10 @@ services:
       SSL_CN: ${SSL_CN:-localhost}
       SSL_ALT_NAMES: ${SSL_ALT_NAMES:-DNS:localhost,IP:127.0.0.1}
       SSL_DAYS: ${SSL_DAYS:-3650}
+      ADMIN_VIEW_USER: ${ADMIN_VIEW_USER:-}
+      ADMIN_VIEW_PASSWORD: ${ADMIN_VIEW_PASSWORD:-}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
     ports:
       - "80:80"
       - "443:443"
