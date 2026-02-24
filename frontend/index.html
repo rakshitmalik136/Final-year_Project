@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cakes n Bakes 365 | make sweet memories</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Manrope:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <script src="config.js"></script>
+    <div class="app-shell">
+      <header class="site-header">
+        <div class="container nav">
+          <a href="#home" class="logo" data-link>
+            <span class="logo-mark">CB</span>
+            <span>
+              <strong>Cakes n Bakes 365</strong>
+              <small>make sweet memories</small>
+            </span>
+          </a>
+          <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <nav class="nav-links">
+            <a href="#home" data-link>Home</a>
+            <a href="#menu" data-link>Menu</a>
+            <a href="#about" data-link>About</a>
+            <a href="#contact" data-link>Contact</a>
+            <a href="#admin" data-link>Admin</a>
+            <a href="#cart" data-link class="cart-link">
+              Cart
+              <span class="cart-count" id="cart-count">0</span>
+            </a>
+          </nav>
+          <a href="#menu" class="btn primary" data-link>Order Now</a>
+        </div>
+      </header>
+
+      <main class="site-main">
+        <section class="page active" id="home" data-page="home">
+          <div class="container hero">
+            <div class="hero-content">
+              <p class="eyebrow">Bakery • Fast Food • Snacks • Drinks</p>
+              <h1>Cakes n Bakes 365</h1>
+              <p class="tagline">make sweet memories</p>
+              <p class="hero-text">
+                A family-run bakery and fast food corner in Mehrauli serving
+                freshly baked treats, comforting snacks, and crowd-pleasing
+                favorites every day.
+              </p>
+              <div class="hero-actions">
+                <a href="#menu" class="btn primary" data-link>Explore Menu</a>
+                <a href="#contact" class="btn ghost" data-link>Visit Us</a>
+              </div>
+              <div class="hero-highlights">
+                <div>
+                  <h3>Fresh Daily</h3>
+                  <p>Made in small batches for taste that feels homemade.</p>
+                </div>
+                <div>
+                  <h3>Local Favorite</h3>
+                  <p>Trusted by the neighborhood for quick bites and bakes.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hero-card">
+              <div class="hero-card-inner">
+                <p class="label">Today at the counter</p>
+                <h2>Signature specials</h2>
+                <ul class="feature-list">
+                  <li>Chilly Paneer Gravy</li>
+                  <li>Chocolate Truffle Cake</li>
+                  <li>Oreo Shake</li>
+                </ul>
+                <a href="#menu" class="btn light" data-link>See Menu</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="container section">
+            <h2>Explore categories</h2>
+            <p class="section-subtitle">
+              From celebration cakes to quick bites, we cover every craving.
+            </p>
+            <div class="card-grid">
+              <article class="card">
+                <h3>Bakery</h3>
+                <p>Signature cakes, pastries, brownies, and baked favorites.</p>
+              </article>
+              <article class="card">
+                <h3>Fast Food</h3>
+                <p>Sandwiches, burgers, pasta, and hearty main-course plates.</p>
+              </article>
+              <article class="card">
+                <h3>Snacks</h3>
+                <p>Crispy starters, momos, kebabs, and comforting soups.</p>
+              </article>
+              <article class="card">
+                <h3>Drinks</h3>
+                <p>Shakes, coffees, and coolers crafted for every season.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="container section banner">
+            <div>
+              <h2>Celebrate every moment</h2>
+              <p>
+                Need a last-minute cake or snack spread? We are ready with quick
+                prep, friendly service, and reliable flavor.
+              </p>
+            </div>
+            <a href="#contact" class="btn primary" data-link>Call to Order</a>
+          </div>
+        </section>
+
+        <section class="page" id="menu" data-page="menu">
+          <div class="container section">
+            <div class="section-header">
+              <div>
+                <h2>Menu</h2>
+                <p class="section-subtitle">
+                  Freshly prepared favorites from the Cakes n Bakes 365 kitchen.
+                </p>
+              </div>
+              <div class="menu-legend">
+                <span class="pill">Veg Friendly</span>
+                <span class="pill">Made Fresh</span>
+              </div>
+            </div>
+
+            <div class="category-tabs" id="category-tabs"></div>
+            <div class="menu-state" id="menu-state"></div>
+            <div class="menu-grid" id="menu-grid"></div>
+          </div>
+        </section>
+
+        <section class="page" id="about" data-page="about">
+          <div class="container section">
+            <h2>About Us</h2>
+            <div class="two-column">
+              <div>
+                <p>
+                  Cakes n Bakes 365 is a family-run bakery and fast food
+                  destination in Mehrauli. We started with a single oven and a
+                  love for sharing sweet moments with neighbors. Today we blend
+                  traditional baking with quick-serve favorites to keep every
+                  visit warm, comforting, and memorable.
+                </p>
+                <p>
+                  Every cake, pastry, and plate is prepared with care, using
+                  ingredients we trust and recipes refined over the years. When
+                  you order from us, you are supporting local talent and a small
+                  team that believes in honest flavors and friendly service.
+                </p>
+              </div>
+              <div class="values">
+                <div class="value-card">
+                  <h3>Family recipes</h3>
+                  <p>Signature bakes inspired by our home kitchen.</p>
+                </div>
+                <div class="value-card">
+                  <h3>Quick comfort</h3>
+                  <p>Fast food and snacks that feel hearty and fresh.</p>
+                </div>
+                <div class="value-card">
+                  <h3>Community first</h3>
+                  <p>Serving celebrations, gatherings, and everyday cravings.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="contact" data-page="contact">
+          <div class="container section">
+            <div class="two-column">
+              <div>
+                <h2>Visit Cakes n Bakes 365</h2>
+                <p>
+                  Address: Cakes n Bakes 365, Mehrauli ND-30<br />
+                  Phone: <a href="tel:9319426397">9319426397</a>
+                </p>
+                <div class="info-card">
+                  <h3>Quick support</h3>
+                  <p>Call us for custom cakes, bulk snack orders, or catering.</p>
+                </div>
+                <div class="contact-actions">
+                  <a
+                    class="btn primary"
+                    id="whatsapp-link"
+                    data-whatsapp
+                    data-message="Hi! I would like to place an order."
+                    href="#"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    Chat on WhatsApp
+                  </a>
+                </div>
+                <p class="contact-note" data-whatsapp-note>
+                  Share your order ID on WhatsApp to get live updates.
+                </p>
+              </div>
+              <div class="map-wrap">
+                <iframe
+                  title="Cakes n Bakes 365 location"
+                  src="https://www.google.com/maps?q=Mehrauli%20ND-30&output=embed"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="admin" data-page="admin">
+          <div class="container section">
+            <div class="section-header">
+              <div>
+                <h2>Admin Dashboard</h2>
+                <p class="section-subtitle">
+                  Track current orders, transit orders, and earnings.
+                </p>
+              </div>
+              <div class="admin-actions" id="admin-actions" hidden>
+                <button class="btn ghost" id="admin-refresh" type="button">
+                  Refresh
+                </button>
+                <button class="btn ghost" id="admin-logout" type="button">
+                  Logout
+                </button>
+              </div>
+            </div>
+
+            <div class="admin-layout">
+              <div class="admin-login-card" id="admin-login-card">
+                <h3>Admin Login</h3>
+                <p class="section-subtitle">
+                  Enter your admin username and password.
+                </p>
+                <form class="admin-login-form" id="admin-login-form">
+                  <label>
+                    Username
+                    <input
+                      type="text"
+                      name="username"
+                      autocomplete="username"
+                      required
+                    />
+                  </label>
+                  <label>
+                    Password
+                    <input
+                      type="password"
+                      name="password"
+                      autocomplete="current-password"
+                      required
+                    />
+                  </label>
+                  <button class="btn primary" type="submit">Login</button>
+                </form>
+                <p class="form-note" id="admin-login-message"></p>
+              </div>
+
+              <div class="admin-dashboard" id="admin-dashboard" hidden>
+                <div class="admin-metrics" id="admin-metrics"></div>
+                <div class="admin-columns">
+                  <div class="summary-card">
+                    <h3>Current Orders</h3>
+                    <div class="admin-orders" id="admin-current-orders"></div>
+                  </div>
+                  <div class="summary-card">
+                    <h3>Orders In Transit</h3>
+                    <div
+                      class="admin-orders"
+                      id="admin-in-transit-orders"
+                    ></div>
+                  </div>
+                </div>
+                <p class="form-note" id="admin-dashboard-message"></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="cart" data-page="cart">
+          <div class="container section">
+            <div class="section-header">
+              <div>
+                <h2>Your Cart</h2>
+                <p class="section-subtitle">
+                  Review your items before checkout.
+                </p>
+              </div>
+              <a href="#menu" class="btn ghost" data-link>Continue shopping</a>
+            </div>
+            <div class="cart-layout">
+              <div class="cart-items" id="cart-items"></div>
+              <div class="summary-card" id="cart-summary"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page" id="checkout" data-page="checkout">
+          <div class="container section">
+            <div class="section-header">
+              <div>
+                <h2>Checkout</h2>
+                <p class="section-subtitle">
+                  Enter your details and place the order.
+                </p>
+              </div>
+              <a href="#cart" class="btn ghost" data-link>Back to cart</a>
+            </div>
+            <div class="checkout-layout">
+              <form class="checkout-form" id="checkout-form">
+                <label>
+                  Full name
+                  <input type="text" name="customerName" required />
+                </label>
+                <label>
+                  Phone number
+                  <input type="tel" name="phone" required />
+                </label>
+                <label>
+                  Delivery address
+                  <textarea name="address" rows="3" required></textarea>
+                </label>
+                <label>
+                  Notes (optional)
+                  <textarea name="notes" rows="2"></textarea>
+                </label>
+                <label class="checkbox">
+                  <input type="checkbox" name="whatsappOptIn" />
+                  <span>Send order updates on WhatsApp</span>
+                </label>
+                <p class="form-hint">
+                  We will use your phone number to send status updates for this
+                  order.
+                </p>
+                <button class="btn primary" type="submit">Place order</button>
+                <p class="form-note" id="checkout-message"></p>
+                <div class="whatsapp-cta" id="whatsapp-cta"></div>
+              </form>
+              <div class="summary-card" id="checkout-summary"></div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <div>
+            <strong>Cakes n Bakes 365</strong>
+            <p>Mehrauli ND-30 • 9319426397</p>
+          </div>
+          <p>Bakery + Fast Food + Snacks + Drinks</p>
+        </div>
+      </footer>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

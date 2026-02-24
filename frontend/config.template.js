@@ -1,0 +1,4 @@
+window.__APP_CONFIG__ = {
+  API_BASE: "${API_BASE}",
+  WHATSAPP_NUMBER: "${WHATSAPP_NUMBER}"
+};
